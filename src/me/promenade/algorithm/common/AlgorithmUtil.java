@@ -19,14 +19,14 @@ public class AlgorithmUtil {
 		swap(list, k, q);
 		q--;
 
-		for( int i=p; i<=q; i++ ){
+		for (int i = p; i <= q; i++) {
 			if (list.get(i) < pivotValue) {
 				swap(list, i, p);
 				p++;
 			}
 		}
 
-		swap(list, p, list.size()-1);
+		swap(list, p, list.size() - 1);
 	}
 
 	public static <T> void swap(List<T> list, int m, int n) {
@@ -38,6 +38,14 @@ public class AlgorithmUtil {
 	public static <T> void print(List<T> list) {
 		for (T t : list) {
 			System.out.print(t.toString() + " ");
+		}
+		System.out.println();
+	}
+
+	public static <T> void print(LinkedListNode<T> head) {
+		while (head != null) {
+			System.out.print(head.getData() + " ");
+			head = head.getNext();
 		}
 		System.out.println();
 	}
