@@ -60,4 +60,5 @@ public class AlgorithmUtil {
 		root.getRight().setRight(new BinaryTreeNode<Integer>(16));
 		return root;
 	}
+	
 }
