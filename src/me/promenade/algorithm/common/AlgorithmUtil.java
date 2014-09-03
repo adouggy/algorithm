@@ -1,6 +1,7 @@
 package me.promenade.algorithm.common;
 
 import java.util.List;
+import java.util.Stack;
 
 public class AlgorithmUtil {
 
@@ -59,6 +60,35 @@ public class AlgorithmUtil {
 		root.getRight().setLeft(new BinaryTreeNode<Integer>(12));
 		root.getRight().setRight(new BinaryTreeNode<Integer>(16));
 		return root;
+	}
+	
+	/**
+	 * 非递归后续遍历二叉树
+	 * 记不住！不理解！
+	 * @param root
+	 */
+	public static void postIterator(BinaryTreeNode<Integer> root) {
+		if (root == null)
+			return;
+
+		Stack<BinaryTreeNode<Integer>> s = new Stack<>();
+		BinaryTreeNode<Integer> current = root;
+		BinaryTreeNode<Integer> preVisited = null;
+		while (current != null || !s.isEmpty()) {
+			while( current != null ){
+				s.push(current);
+				current = current.getLeft();
+			}
+			current = s.peek();
+			if( current.getRight() == null || current.getRight() == preVisited ){
+				System.out.println( current.getData() );
+				preVisited = current;
+				s.pop();
+				current = null;
+			}else{
+				current = current.getRight();
+			}
+		}
 	}
 	
 }
