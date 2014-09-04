@@ -50,7 +50,7 @@ public class AlgorithmUtil {
 		}
 		System.out.println();
 	}
-	
+
 	public static BinaryTreeNode<Integer> createTree() {
 		BinaryTreeNode<Integer> root = new BinaryTreeNode<>(10);
 		root.setLeft(new BinaryTreeNode<Integer>(6));
@@ -61,8 +61,8 @@ public class AlgorithmUtil {
 		root.getRight().setRight(new BinaryTreeNode<Integer>(16));
 		return root;
 	}
-	
-	public static LinkedListNode<Integer> createLinkedList(){
+
+	public static LinkedListNode<Integer> createLinkedList() {
 		LinkedListNode<Integer> n1 = new LinkedListNode<>();
 		LinkedListNode<Integer> n2 = new LinkedListNode<>();
 		LinkedListNode<Integer> n3 = new LinkedListNode<>();
@@ -73,7 +73,7 @@ public class AlgorithmUtil {
 		LinkedListNode<Integer> n8 = new LinkedListNode<>();
 		LinkedListNode<Integer> n9 = new LinkedListNode<>();
 		LinkedListNode<Integer> n10 = new LinkedListNode<>();
-		
+
 		n1.setData(0);
 		n2.setData(1);
 		n3.setData(2);
@@ -84,7 +84,7 @@ public class AlgorithmUtil {
 		n8.setData(7);
 		n9.setData(8);
 		n10.setData(9);
-		
+
 		n1.setNext(n2);
 		n2.setNext(n3);
 		n3.setNext(n4);
@@ -94,13 +94,13 @@ public class AlgorithmUtil {
 		n7.setNext(n8);
 		n8.setNext(n9);
 		n9.setNext(n10);
-		
+
 		return n1;
 	}
-	
+
 	/**
-	 * 非递归后续遍历二叉树
-	 * 记不住！不理解！
+	 * 非递归后续遍历二叉树 记不住！不理解！
+	 * 
 	 * @param root
 	 */
 	public static void postIterator(BinaryTreeNode<Integer> root) {
@@ -111,20 +111,28 @@ public class AlgorithmUtil {
 		BinaryTreeNode<Integer> current = root;
 		BinaryTreeNode<Integer> preVisited = null;
 		while (current != null || !s.isEmpty()) {
-			while( current != null ){
+			while (current != null) {
 				s.push(current);
 				current = current.getLeft();
 			}
 			current = s.peek();
-			if( current.getRight() == null || current.getRight() == preVisited ){
-				System.out.println( current.getData() );
+			if (current.getRight() == null || current.getRight() == preVisited) {
+				System.out.println(current.getData());
 				preVisited = current;
 				s.pop();
 				current = null;
-			}else{
+			} else {
 				current = current.getRight();
 			}
 		}
 	}
-	
+
+	public static void printTree(BinaryTreeNode<Integer> node) {
+		if (node.getLeft() != null)
+			printTree(node.getLeft());
+		System.out.print(node.getData() + " ");
+		if (node.getRight() != null)
+			printTree(node.getRight());
+	}
+
 }
