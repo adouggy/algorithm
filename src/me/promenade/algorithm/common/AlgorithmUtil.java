@@ -62,6 +62,42 @@ public class AlgorithmUtil {
 		return root;
 	}
 	
+	public static LinkedListNode<Integer> createLinkedList(){
+		LinkedListNode<Integer> n1 = new LinkedListNode<>();
+		LinkedListNode<Integer> n2 = new LinkedListNode<>();
+		LinkedListNode<Integer> n3 = new LinkedListNode<>();
+		LinkedListNode<Integer> n4 = new LinkedListNode<>();
+		LinkedListNode<Integer> n5 = new LinkedListNode<>();
+		LinkedListNode<Integer> n6 = new LinkedListNode<>();
+		LinkedListNode<Integer> n7 = new LinkedListNode<>();
+		LinkedListNode<Integer> n8 = new LinkedListNode<>();
+		LinkedListNode<Integer> n9 = new LinkedListNode<>();
+		LinkedListNode<Integer> n10 = new LinkedListNode<>();
+		
+		n1.setData(0);
+		n2.setData(1);
+		n3.setData(2);
+		n4.setData(3);
+		n5.setData(4);
+		n6.setData(5);
+		n7.setData(6);
+		n8.setData(7);
+		n9.setData(8);
+		n10.setData(9);
+		
+		n1.setNext(n2);
+		n2.setNext(n3);
+		n3.setNext(n4);
+		n4.setNext(n5);
+		n5.setNext(n6);
+		n6.setNext(n7);
+		n7.setNext(n8);
+		n8.setNext(n9);
+		n9.setNext(n10);
+		
+		return n1;
+	}
+	
 	/**
 	 * 非递归后续遍历二叉树
 	 * 记不住！不理解！
